@@ -56,7 +56,7 @@ $(".logout").on('click', () => {
     SDK.logOut( () => {
     this.total = 0;
 
-window.location.href = "index.html";
+window.location.href = "../Index.html";
 })
 });
 });
