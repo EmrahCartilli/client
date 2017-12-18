@@ -1,10 +1,11 @@
 
 $(document).ready( () => {
-//handler for click on submit in login form
+//bekræft knap når man skal logge ind
     $(".login").on('click','.submit', (e) => {
-    //prevent page reload
+    //reload
     e.preventDefault();
-//fetch username and password from input fields
+//brugernavn og password fra indput
+
 $username = $("#login .username").val();
 $password = ($("#login .password").val());
 SDK.login($username,$password, (err, data) => {
@@ -20,6 +21,7 @@ setTimeout(loadUser,1000);
 })
 });
 
+    //sign up
 $(".Opret").on('click','.submit', (e) => {
     e.preventDefault();
 if ($("#Opret .username").val().length > 7 && $("#Opret .password").val().length > 7) {
@@ -61,7 +63,7 @@ $(".switch").on('click', () => {
 
 });
 
-
+// logger brugeren ind ud fra type
 loadUser = () => {
     if (!SDK.Storage.load("isPersonel"))
     {
@@ -71,10 +73,3 @@ loadUser = () => {
 };
 
 
-loadUser = () => {
-    if (!SDK.Storage.load("isPersonel"))
-    {
-        window.location.href = "userMainPage.html";
-    } else {
-        window.location.href = "staffMainPage.html"; }
-};
