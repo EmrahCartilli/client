@@ -1,10 +1,10 @@
 
 $(document).ready( () => {
-//bekræft knap når man skal logge ind
+//bekræft knappen - når man skal logge ind
     $(".login").on('click','.submit', (e) => {
     //reload
     e.preventDefault();
-//brugernavn og password fra indput
+//brugernavn og password fra input
 
 $username = $("#login .username").val();
 $password = ($("#login .password").val());
@@ -21,7 +21,7 @@ setTimeout(loadUser,1000);
 })
 });
 
-    //sign up
+    //oprette sig som bruger
 $(".Opret").on('click','.submit', (e) => {
     e.preventDefault();
 if ($("#Opret .username").val().length > 7 && $("#Opret .password").val().length > 7) {
@@ -63,7 +63,7 @@ $(".switch").on('click', () => {
 
 });
 
-// logger brugeren ind ud fra type
+// logger brugeren ind alt efter type
 loadUser = () => {
     if (!SDK.Storage.load("isPersonel"))
     {
