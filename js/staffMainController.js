@@ -1,5 +1,6 @@
 $(window).ready(() => {
 
+    //metode som henter alle ordrer
     SDK.Orders.getAll((err, orders) => {
     if(err)
     return window.location.href = "index.html";
