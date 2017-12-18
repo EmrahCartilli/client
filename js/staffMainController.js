@@ -11,9 +11,9 @@ for (let i = 0 ; i < orders.length ; i++) {
     let total = 0;
     isReady= () => {
         if(order.isReady === true) {
-            return "class= 'ready' >Klar"
+            return "class= 'ready' >Ready"
         } else {
-            return "class= 'notReady'>Ikke klar"
+            return "class= 'notReady'>Not ready"
         }
     };
     $(".ordersContainer").append(
@@ -44,7 +44,7 @@ for (let i = 0 ; i < orders.length ; i++) {
         )
     }
 
-    $(`<h4>Total pris:  <span style="position: absolute; right: 12%;">${total} kr.</span></h4>`).insertBefore('*[data-id='+ order.orderId +'] table')
+    $(`<h4>Total price:  <span style="position: absolute; right: 12%;">${total} DKK.</span></h4>`).insertBefore('*[data-id='+ order.orderId +'] table')
 }
 
 
