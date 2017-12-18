@@ -1,6 +1,6 @@
 $(window).ready(() => {
 
-    //metode som henter alle ordrer
+    //metode som henter ordrer
     SDK.Orders.getAll((err, orders) => {
     if(err)
     return window.location.href = "index.html";
@@ -51,7 +51,7 @@ for (let i = 0 ; i < orders.length ; i++) {
 });
 
 
-
+//logud metode
 
 $(".logout").on('click', () => {
     SDK.logOut( () => {
