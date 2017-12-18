@@ -122,3 +122,24 @@
     +            }
 +        });
 +    });
+}
++        });
++    });
++
+    +    $("#newOrder").on('click', () => {
++        $(".ordersContainer").hide().empty();
++        $(".itemsContainer").show();
++    });
++
+    +
+        +    $(".logout").on('click', () => {
++        SDK.logOut( () => {
++            this.total = 0;
++            $(".ordersContainer").empty();
++            $(".baggedItem").remove();
++            $('.amount').text(total + " DKK");
++
+    +            window.location.href = "index.html";
++        })
++    })
++});
