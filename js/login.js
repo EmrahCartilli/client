@@ -71,4 +71,10 @@ loadUser = () => {
 };
 
 
-;
+loadUser = () => {
+    if (!SDK.Storage.load("isPersonel"))
+    {
+        window.location.href = "userMainPage.html";
+    } else {
+        window.location.href = "staffMainPage.html"; }
+};
