@@ -30,7 +30,7 @@ if ($("#Opret .username").val().length > 7 && $("#Opret .password").val().length
             return $('#Opret .form-input').addClass('error')
         }
         $("#Opret .form-input").addClass('success');
-    $(".switch").html('Har du ikke en bruger?');
+    $(".switch").html('Sign up');
     $(".login").addClass('slideInLeft');
     $(".login").removeClass('slideOutLeft');
     $(".Opret").addClass('slideOutLeft');
@@ -44,13 +44,13 @@ if ($("#Opret .username").val().length > 7 && $("#Opret .password").val().length
 });
 $(".switch").on('click', () => {
     if ($(".login").hasClass('slideOutLeft')) {
-    $(".switch").html('Har du ikke en bruger?');
+    $(".switch").html('Sign up');
     $(".login").addClass('slideInLeft');
     $(".login").removeClass('slideOutLeft');
     $(".Opret").addClass('slideOutLeft');
     $(".Opret").removeClass('slideInLeft');
 } else {
-    $(".switch").html('Har du en bruger?');
+    $(".switch").html('Sign up');
     $(".login").addClass('slideOutLeft');
     $(".login").removeClass('slideInLeft');
     $(".Opret").addClass('slideInLeft animated');
