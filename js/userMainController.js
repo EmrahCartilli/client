@@ -68,3 +68,57 @@
     +                window.alert("Empty order!")
     +            }
 +        })
+});
++
+    +    $("#history").on('click', () => {
++        $(".ordersContainer").empty();
++        $(".itemsContainer").hide();
++        $(".ordersContainer").show();
++        SDK.Orders.getByUserId( (err, orders) => {
++            if (err)
+    +                return alert("Empty history!");
++
+    +            for (let i = 0 ; i < orders.length ; i++) {
+    +
+        +                let order = orders[orders.length - i - 1];
+    +                let items = order.items;
+    +                let total = 0;
+    +                isReady= () => {
+        +                    if(order.isReady === true) {
+            +                        return "class= 'ready' > Your order is ready!"
+                +                    } else {
+            +                        return "class= 'notReady' >  Your order is not ready yet!"
+                +                    }
+        +                };
+    +                $(".ordersContainer").append(
+        +                    `<div class='order animated fadeIn' data-id = ${order.orderId}> 
+ +                    <h2 ${isReady()}</h2><br>
+ +                    <p> Bestilt: </p>
+ +                    <p> ${order.orderTime}</p><br>
+ +                    <table>
+ +                        <tr>
+ +                            <th>Produkter:</th>
+ +                            <th>Pris:</th>
+ +                        </tr>
+ +                    </table>
+ +                   </div>`
+        +                );
+    +                for (let j = 0 ; j < items.length ; j++) {
+        +                    let item = items[j];
+        +                    total += item.itemPrice;
+        +                    $('*[data-id='+ order.orderId +'] table').append(
+            +                        `<tr>
+ +                        <td>
+ +                            ${item.itemName}
+ +                        </td> 
+ +                        <td>
+ +                            ${item.itemPrice} DKK
+ +                        </td>
+ +                    </tr>`
+            +                    )
+        +                }
+    +
+        +                $(`<h4>Total price:  <span style="position: absolute; right: 12%;">${total} DKK</span></h4>`).insertBefore('*[data-id='+ order.orderId +'] table')
+    +            }
++        });
++    });
