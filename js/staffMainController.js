@@ -18,12 +18,12 @@ for (let i = 0 ; i < orders.length ; i++) {
     $(".ordersContainer").append(
         `<div class='order animated fadeIn' data-id = ${order.orderId}> 
                 <h2 ${isReady()}</h2><br>
-                <p> Bestilt: </p>
+                <p> Ordered: </p>
                 <p> ${order.orderTime}</p><br>
                 <table>
                     <tr>
-                        <th>Produkter:</th>
-                        <th>Pris:</th>
+                        <th>Products:</th>
+                        <th>Price:</th>
                     </tr>
                 </table>
             </div>`
@@ -37,7 +37,7 @@ for (let i = 0 ; i < orders.length ; i++) {
                             ${item.itemName}
                         </td> 
                         <td>
-                            ${item.itemPrice} kr.
+                            ${item.itemPrice} DKK.
                         </td>
                     </tr>`
         )
