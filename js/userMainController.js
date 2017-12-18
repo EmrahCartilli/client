@@ -1,5 +1,6 @@
 +$(document).ready( () => {
 +
+
 +    const history = $(".ordersContainer");
 +    SDK.Items.getAll( (err, items) => {
 +        if (err) {
@@ -12,7 +13,7 @@
 +
     +
         +
-            +
+            +//indkøbskurven
                 +        $(".orderOverview").addClass('fadeIn');
 +
     +        for(let i = 0 ; i < items.length ; i++){
@@ -69,7 +70,7 @@
     +            }
 +        })
 });
-+
++//viser brugerens tidligere ordrer
     +    $("#history").on('click', () => {
 +        $(".ordersContainer").empty();
 +        $(".itemsContainer").hide();
